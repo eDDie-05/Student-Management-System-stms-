@@ -1,162 +1,75 @@
-# Student Management System in C
+# Student Management System (C)
 
-A simple **Student Management System** developed using the **C programming language**. The system allows users to manage student records through a command-line interface.
+A menu-driven **C command-line program** for maintaining a small collection of student records. It demonstrates structures, arrays, functions, and basic text-file storage.
 
-## Features
+## Features in the current source
 
-* Add new student records
-* Display all students
-* Search for a student
-* Update student information
-* Delete student records
-* Store student information using file handling
-* Calculate and display student grades
-* Simple command-line menu
-* Persistent data storage
+- Add a student with an ID, name, and marks
+- Display saved student records
+- Search for a student by ID
+- Delete a student by ID
+- Load records from `students.txt` when the program starts
+- Save records to `students.txt`
 
-## Student Information
+The program stores up to 100 records in its in-memory array.
 
-Each student record can contain:
+## Requirements
 
-* Student ID
-* Full Name
-* Age
-* Gender
-* Course
-* Department
-* Marks
-* Grade
+- A C compiler such as GCC
+- A terminal or command prompt
 
-## Technologies Used
+## Build and run
 
-* **Programming Language:** C
-* **Compiler:** GCC
-* **Interface:** Command Line / Terminal
-* **Storage:** File handling
-
-## Project Structure
-
-```text
-student-management-system/
-│
-├── main.c
-├── students.dat
-└── README.md
-```
-
-## How to Run
-
-### 1. Clone or download the project
+Clone the repository:
 
 ```bash
-git clone <your-repository-url>
-cd student-management-system
+git clone https://github.com/eDDie-05/Student-Management-System-stms-.git
+cd Student-Management-System-stms-
 ```
 
-### 2. Compile the program
-
-Using GCC:
+Compile the source:
 
 ```bash
-gcc main.c -o student_management
+gcc -std=c11 -Wall -Wextra -pedantic sms.c -o student-management
 ```
 
-### 3. Run the program
-
-On macOS/Linux:
+Run on macOS or Linux:
 
 ```bash
-./student_management
+./student-management
 ```
 
-On Windows:
+Run on Windows:
 
-```bash
-student_management.exe
+```powershell
+.\student-management.exe
 ```
 
-## Example Menu
+## Data storage
 
-```text
-====================================
-      STUDENT MANAGEMENT SYSTEM
-====================================
+The application reads and writes `students.txt` in its current working directory. The file is created when the program saves records. Keep a backup if the records matter.
 
-1. Add Student
-2. Display Students
-3. Search Student
-4. Update Student
-5. Delete Student
-6. Exit
+## Current limitations
 
-Enter your choice:
-```
+- This is a learning project, not a complete school administration system.
+- Names are currently read as single words.
+- Input validation and duplicate-ID checks can be improved.
+- Records are stored in a plain text file; there are no user accounts or database.
+- The repository also contains older or generated files; `sms.c` is the source used in the build command above.
 
-## File Handling
+## Ideas for future work
 
-The system uses C file handling to save student records so that information can remain available after the program is closed.
+- Validate numeric input and handle invalid input safely.
+- Support full names with spaces.
+- Prevent duplicate student IDs.
+- Add update/edit functionality.
+- Add automated tests and clearer data-file handling.
+- Separate the program into smaller source and header files.
 
-Common file functions used include:
+## Contributing
 
-```c
-fopen()
-fclose()
-fread()
-fwrite()
-fprintf()
-fscanf()
-```
-
-## Concepts Demonstrated
-
-This project demonstrates important C programming concepts such as:
-
-* Variables and data types
-* Structures (`struct`)
-* Functions
-* Arrays
-* Pointers
-* Conditional statements
-* Loops
-* String handling
-* File handling
-* Menu-driven programming
-
-## Sample Student Record
-
-```text
-Student ID : 1001
-Name       : John Doe
-Age        : 21
-Gender     : Male
-Course     : Computer Science
-Department : ICT
-Marks      : 85
-Grade      : A
-```
-
-## Possible Future Improvements
-
-The system can be expanded with:
-
-* Student login accounts
-* Teacher management
-* Course management
-* Attendance tracking
-* Fee management
-* Examination results
-* GPA calculation
-* Report generation
-* Password protection
-* Database integration
-
-## Author
-
-**Student Management System**
-
-Developed as a C programming project for learning and demonstrating programming fundamentals.
+Open an issue to discuss a change, then submit a focused pull request with a clear description and test steps.
 
 ## License
-eDDie
 
-This project is intended for educational purposes.
+No open-source license is currently specified. All rights remain with the respective content owner unless a license is added.
